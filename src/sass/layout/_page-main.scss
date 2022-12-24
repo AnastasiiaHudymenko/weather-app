@@ -1,0 +1,61 @@
+.page-main {
+  background-image: linear-gradient(
+      152.19deg,
+      rgba(136, 235, 239, 0.5) -0.04%,
+      rgba(83, 91, 230, 0.5) 100%
+    ),
+    url(../images/sun.webp);
+  background-size: 493px 669px;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  width: 493px;
+  padding-top: 48px;
+  padding-bottom: 84px;
+  padding-left: 32px;
+
+  border-radius: 30px;
+}
+
+.page-main__day-title {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 1.21;
+}
+
+.page-main__day-of-month {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.22;
+}
+
+.page-main__wrepper-content {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+}
+
+.page-main__wrapper-bottom-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.page-main__img-act {
+  fill: rgba(255, 255, 0, 0.5);
+}
+
+.page-main__degree {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.22;
+}
+
+.page-main__status-weather {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.23;
+}
