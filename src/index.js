@@ -7,6 +7,10 @@ const refs = {
   cloudniness: document.querySelector('.list-decs__info--cld'),
   humidity: document.querySelector('.list-decs__info--hum'),
   wind: document.querySelector('.list-decs__info--wind'),
+  divPageMain: document.querySelector('.page-main'),
+  icSv: document.querySelector('.ic-sv'),
+  btn: document.querySelector('.btn-search'),
+  input: document.querySelector('.page-second__btn-search'),
 };
 
 const dayArr = [
@@ -25,11 +29,31 @@ getFeatch()
   .then(data => create(data));
 function getFeatch() {
   return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?units=metric&q=Kiev&appid=${API_KEY}`
+    `https://api.openweathermap.org/data/2.5/weather?units=metric&q=kiev&appid=${API_KEY}`
   );
 }
 
+refs.btn.addEventListener('click', onInput);
+function onInput(evt) {
+  const userInput = refs.input.value;
+  userFetch(userInput)
+    .then(res => res.json())
+    .then(data => create(data));
+}
+
 function create(data) {
+  data.weather.forEach(el => {
+    if (el.main === 'Clouds') {
+      refs.icSv.href.baseVal = `/symbol-defs.a8b2e413.svg#icon-cloude`;
+    }
+    if (el.main === 'Clear') {
+      refs.icSv.href.baseVal = `/symbol-defs.a8b2e413.svg#icon-Sun`;
+    }
+    if (el.main === 'Rain') {
+      refs.icSv.href.baseVal = `/symbol-defs.a8b2e413.svg#icon-bi_cloud-rain`;
+    }
+  });
+
   const currentDate = new Date();
   const day = currentDate.getDay();
 
@@ -46,4 +70,10 @@ function create(data) {
   refs.cloudniness.textContent = `${data.clouds.all} %`;
   refs.humidity.textContent = `${data.main.humidity} %`;
   refs.wind.textContent = `${(data.wind.speed * 3.6).toFixed(1)} km/h`;
+}
+
+function userFetch(search) {
+  return fetch(
+    `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${search}&appid=${API_KEY}`
+  );
 }
