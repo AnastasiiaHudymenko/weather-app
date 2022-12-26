@@ -35,10 +35,11 @@ function getFeatch() {
 
 refs.btn.addEventListener('click', onInput);
 function onInput(evt) {
-  const userInput = refs.input.value;
+  let userInput = refs.input.value;
   userFetch(userInput)
     .then(res => res.json())
     .then(data => create(data));
+  refs.input.value = '';
 }
 
 function create(data) {

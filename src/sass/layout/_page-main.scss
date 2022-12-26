@@ -1,11 +1,8 @@
 .page-main {
-  background-image: linear-gradient(
-      152.19deg,
-      rgba(136, 235, 239, 0.5) -0.04%,
-      rgba(83, 91, 230, 0.5) 100%
-    ),
-    url(../images/Clear.webp);
-  background-size: 493px 669px;
+  animation: headerLane 15s linear infinite alternate;
+  background-image: url(../images/Clouds.webp);
+
+  background-size: cover;
   display: flex;
   flex-direction: column;
   gap: 200px;
@@ -15,6 +12,20 @@
   padding-left: 32px;
 
   border-radius: 30px;
+}
+
+@keyframes headerLane {
+  0% {
+    background-image: url(../images/sky-clouds-background.jpg);
+  }
+
+  0% {
+    background-image: url(../images/sky-clouds.jpg);
+  }
+
+  100% {
+    background-image: url(../images/sky-clouds-background.jpg);
+  }
 }
 
 .page-main__day-title {
