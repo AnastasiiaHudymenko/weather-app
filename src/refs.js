@@ -4,17 +4,17 @@ export const refs = {
   city: document.querySelector('.page-main__location-now'),
   currentTemp: document.querySelector('.page-main__degree'),
   currentStutusWth: document.querySelector('.page-main__status-weather'),
-  cloudniness: document.querySelector('.list-decs__info--cld'),
+  feelslike: document.querySelector('.list-decs__info--cld'),
   humidity: document.querySelector('.list-decs__info--hum'),
   wind: document.querySelector('.list-decs__info--wind'),
   divPageMain: document.querySelector('.page-main'),
-  icSv: document.querySelector('.ic-sv'),
+  img: document.querySelector('.img-current'),
   btn: document.querySelector('.btn-search'),
   input: document.querySelector('.page-second__btn-search'),
-  icCvCurrent: document.querySelector('.icCv-current'),
+  imgCurrentMini: document.querySelectorAll('.img-current-mini'),
   svgCurIc: document.querySelector('.svg-cur-ic'),
-  currentDaymini: document.querySelector('.list-info__day'),
-  currentDegree: document.querySelector('.list-info__degree'),
+  currentDaymini: document.querySelectorAll('.list-info__day'),
+  currentDegree: document.querySelectorAll('.list-info__degree'),
 };
 
 export const dayArr = [
