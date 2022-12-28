@@ -15,6 +15,8 @@ export const refs = {
   svgCurIc: document.querySelector('.svg-cur-ic'),
   currentDaymini: document.querySelectorAll('.list-info__day'),
   currentDegree: document.querySelectorAll('.list-info__degree'),
+  list: document.querySelectorAll('.list-info__item'),
+  btnArrow: document.querySelector('.btn-arrow'),
 };
 
 export const dayArr = [

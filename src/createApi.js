@@ -1,7 +1,7 @@
 import { dayArr } from './refs';
 import { refs } from './refs';
 
-export function create(data) {
+export function createStaticWeatther(data) {
   createWeatherAll(data);
 }
 
@@ -20,6 +20,7 @@ function createWeatherAll({
   },
   forecast: { forecastday: dayOfday },
 }) {
+  refs.list[0].classList.add('list-info__item--current');
   const temp = temp_c.toFixed();
   const currentDate = new Date();
   const day = currentDate.getDay();

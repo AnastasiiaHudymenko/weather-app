@@ -38,9 +38,15 @@
 .list-info {
   display: flex;
   text-align: center;
+  justify-content: center;
   background-color: rgba(39, 46, 55, 1);
   border-radius: 10px;
   margin-bottom: 70px;
+}
+
+.item-arrow {
+  display: flex;
+  align-items: center;
 }
 
 .list-info__item {
@@ -50,12 +56,10 @@
 }
 
 .list-info__item--current {
+  transform: scale(1.2);
   background-color: #fff;
   color: #222831;
-}
-
-.list-info__icon--current {
-  fill: #222831;
+  transition: 1s;
 }
 
 .list-info__day {
@@ -99,6 +103,16 @@
   &::placeholder {
     color: #fff;
   }
+}
+
+.btn-arrow {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon-arrow {
+  transform: rotate(90deg);
 }
 
 .location-icon-search {
